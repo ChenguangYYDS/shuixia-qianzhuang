@@ -99,7 +99,7 @@
   <div class="card">
     <h1>水下钱庄 · 隐私政策</h1>
     <div class="meta">
-      生效日期：2026 年 10 月 20 日（广告接入版）　|　适用游戏：《水下钱庄》
+      生效日期：2026 年 10 月 21 日（含第三方 SDK 完整披露）　|　适用游戏：《水下钱庄》
     </div>
 
     <div class="highlight">
@@ -139,34 +139,189 @@
       卸载游戏或清除应用数据后，上述本地数据将被删除，无法恢复。
     </p>
 
-    <h2>二、第三方服务</h2>
-    <p>游戏可能在以下场景接入第三方服务，届时会有相应的数据交互：</p>
+<h2>二、第三方 SDK 情况说明</h2>
+    <p>本游戏接入了以下第三方 SDK。我们按照监管要求，在此逐项披露各 SDK 的名称、
+       开发者、使用目的、使用场景、申请的权限、收集的个人信息类型及方式、
+       隐私政策链接，以及调用频次与时机。</p>
+
+    <h3 style="font-size:15px;color:#ffd97a;margin:22px 0 10px;padding-left:10px;
+               border-left:3px solid #ffce54">2.1 TapADN 广告 SDK（核心披露项）</h3>
 
     <table>
       <tr>
-        <th>服务</th>
-        <th>场景</th>
-        <th>涉及数据</th>
+        <th style="width:26%">披露项</th>
+        <th>内容</th>
       </tr>
       <tr>
-        <td>TapTap 平台</td>
-        <td>在 TapTap 客户端内启动游戏</td>
-        <td>由 TapTap 按其隐私政策处理，我们不直接获取</td>
+        <td><strong>SDK 名称</strong></td>
+        <td>TapADN SDK（TapADN 广告 SDK）<br>
+            <span style="font-size:12px;color:#8ba0bd">包名：com.tapsdk.tapad　版本：5.3.0.4</span></td>
       </tr>
       <tr>
-        <td><strong>TapADN 广告 SDK</strong><br>
-            <span style="font-size:12px;color:#8ba0bd">上海艾得蒽数字科技有限公司</span></td>
-        <td>观看激励视频广告获取游戏内奖励<br>
-            （背包扩容、开箱加成）</td>
-        <td>设备标识符（OAID/Android ID）、网络状态、广告交互记录、<br>
-            粗略位置（仅在用户授权时）</td>
+        <td><strong>开发者名称（全称）</strong></td>
+        <td><strong>上海艾得蒽数字科技有限公司</strong></td>
+      </tr>
+      <tr>
+        <td><strong>使用目的</strong></td>
+        <td>向用户展示激励视频广告；在用户完整观看后发放对应的游戏内奖励。
+            这是本游戏唯一的商业化方式，不涉及付费内购。</td>
+      </tr>
+      <tr>
+        <td><strong>使用场景</strong></td>
+        <td>仅在下列 4 个用户主动点击的场景中调用：<br>
+            ① 钓鱼界面背包已满 → 点击「看广告·临时扩背包」<br>
+            ② 宝库页面 → 点击「看广告·开箱必得多件」<br>
+            ③ 仓库页面 → 点击「看广告·直接领 5000 金」<br>
+            ④ 负面事件导致金币归零 → 点击「看广告·免除本次事件」<br>
+            <span style="font-size:12px;color:#8ba0bd">
+            以上入口均由用户主动点击触发，游戏不会自动播放广告。</span></td>
+      </tr>
+      <tr>
+        <td><strong>调用权限说明</strong></td>
+        <td>
+          本 App 向系统申请的权限及用途：<br>
+          · <code>INTERNET</code>（访问网络）：请求广告素材与广告配置<br>
+          · <code>ACCESS_NETWORK_STATE</code>（查看网络状态）：判断网络是否可用，选择合适素材<br>
+          · <code>REQUEST_INSTALL_PACKAGES</code>（安装应用）：广告落地页下载安装 App 时使用<br>
+          · <code>QUERY_ALL_PACKAGES</code>（查询已安装应用）：广告落地页判断微信等应用是否已安装<br>
+          · <code>com.asus.msa.SupplementaryDID.ACCESS</code>、<code>freemme.permission.msa</code>：
+            用于读取 OAID（匿名设备标识符），仅在部分厂商设备上生效<br>
+          <br>
+          <strong>以下敏感权限本 App 未申请、也不会申请：</strong><br>
+          <span style="font-size:12px;color:#8ba0bd">
+          精确定位、通讯录、短信、通话记录、相册、麦克风、摄像头、
+          日历、传感器（加速度计/陀螺仪）</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>个人信息收集类型及方式</strong></td>
+        <td>
+          <strong>收集类型：</strong><br>
+          · 设备标识符：OAID（匿名设备标识符）、Android ID<br>
+          · 设备信息：设备型号、操作系统版本、屏幕分辨率、语言设置<br>
+          · 网络信息：网络类型（WiFi/移动网络）、IP 地址<br>
+          · 广告交互数据：广告展示、点击、关闭、观看完成状态<br>
+          <br>
+          <strong>收集方式：</strong>由 SDK 在广告请求与展示过程中自动采集，
+          通过 HTTPS 加密传输至广告服务器。<br>
+          <br>
+          <strong>我们不收集、SDK 也不采集：</strong><br>
+          <span style="font-size:12px;color:#8ba0bd">
+          姓名、身份证号、手机号、邮箱、通讯录、位置轨迹、
+          照片、生物识别信息、IMSI、IMEI</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>隐私政策链接</strong></td>
+        <td>
+          TapADN SDK 隐私政策：<br>
+          <a href="https://ssp.dirichlet.cn/docs/agreement/" target="_blank">
+            https://ssp.dirichlet.cn/docs/agreement/</a><br>
+          SDK 合规使用说明：<br>
+          <a href="https://ssp.dirichlet.cn/docs/compliance/" target="_blank">
+            https://ssp.dirichlet.cn/docs/compliance/</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>频次与时机</strong></td>
+        <td>
+          <strong>调用时机：</strong>仅在用户点击上述 4 个广告入口时调用，
+          每次点击触发一次广告请求。<br>
+          <strong>调用频次：</strong>无固定频次，完全由用户主动行为决定。<br>
+          <strong>初始化时机：</strong>App 启动后延迟约 3 秒、且游戏画面显示完成后
+          才初始化 SDK（避免影响启动速度）。<br>
+          <strong>预加载：</strong>SDK 就绪后会预先缓存广告素材（最多 3 个广告位各 1 支），
+          用于减少用户点击后的等待时间。
+        </td>
       </tr>
     </table>
 
+    <h3 style="font-size:15px;color:#ffd97a;margin:22px 0 10px;padding-left:10px;
+               border-left:3px solid #ffce54">2.2 TapTap 平台（分发渠道）</h3>
+
+    <table>
+      <tr>
+        <th style="width:26%">披露项</th>
+        <th>内容</th>
+      </tr>
+      <tr>
+        <td><strong>SDK / 服务名称</strong></td>
+        <td>TapTap 客户端（分发渠道，非嵌入 SDK）</td>
+      </tr>
+      <tr>
+        <td><strong>开发者名称（全称）</strong></td>
+        <td><strong>易玩（上海）网络科技有限公司</strong></td>
+      </tr>
+      <tr>
+        <td><strong>使用目的</strong></td>
+        <td>作为游戏分发渠道，提供下载、安装、更新与社区服务。</td>
+      </tr>
+      <tr>
+        <td><strong>使用场景</strong></td>
+        <td>用户通过 TapTap 客户端下载、安装、启动本游戏时。</td>
+      </tr>
+      <tr>
+        <td><strong>调用权限说明</strong></td>
+        <td>本 App 未为此接入任何额外权限。TapTap 客户端自身的权限申请
+            由其独立完成，与本 App 无关。</td>
+      </tr>
+      <tr>
+        <td><strong>个人信息收集类型及方式</strong></td>
+        <td>本 App <strong>不向 TapTap 传递任何用户个人信息</strong>。
+            TapTap 客户端作为独立应用，其数据收集行为由 TapTap 自行负责，
+            详见其隐私政策。</td>
+      </tr>
+      <tr>
+        <td><strong>隐私政策链接</strong></td>
+        <td>
+          <a href="https://www.taptap.cn/doc/privacy-policy/" target="_blank">
+            https://www.taptap.cn/doc/privacy-policy/</a>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>频次与时机</strong></td>
+        <td>仅在用户使用 TapTap 客户端期间由其自身触发，本 App 不参与调用。</td>
+      </tr>
+    </table>
+
+    <h3 style="font-size:15px;color:#ffd97a;margin:22px 0 10px;padding-left:10px;
+               border-left:3px solid #ffce54">2.3 未接入的第三方 SDK 声明</h3>
+    <p>为避免误解，我们明确声明：本游戏<strong>未接入</strong>以下类型的第三方 SDK：</p>
+    <ul>
+      <li>统计分析类（如友盟、神策、GrowingIO、Google Analytics）</li>
+      <li>推送通知类（如极光推送、个推、小米推送）</li>
+      <li>社交登录类（如微信登录、QQ 登录、微博登录）</li>
+      <li>支付类（如微信支付、支付宝）</li>
+      <li>崩溃监控类（如 Bugly、Sentry）</li>
+      <li>地图与定位类（如高德、百度地图）</li>
+      <li>其他广告网络（如穿山甲、优量汇、快手联盟）</li>
+    </ul>
     <p class="meta" style="margin:8px 0 0;border:none;padding:0">
-      广告 SDK 仅在您同意本隐私政策后初始化，且默认关闭位置、设备标识符等
-      敏感信息的采集，您可在系统设置中随时撤回相关权限。
+      本游戏的游戏进度、金币、图鉴等全部数据仅保存在您的设备本地，
+      <strong>不上传至任何服务器</strong>。
     </p>
+
+    <h3 style="font-size:15px;color:#ffd97a;margin:22px 0 10px;padding-left:10px;
+               border-left:3px solid #ffce54">2.4 第三方 SDK 清单汇总</h3>
+    <table>
+      <tr>
+        <th>SDK 名称</th>
+        <th>开发者</th>
+        <th>功能类型</th>
+        <th>是否收集个人信息</th>
+      </tr>
+      <tr>
+        <td>TapADN SDK 5.3.0.4</td>
+        <td>上海艾得蒽数字科技有限公司</td>
+        <td>广告（激励视频）</td>
+        <td>是（设备标识符、网络信息、广告交互数据）</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:center;color:#8ba0bd;font-size:12px">
+          除上述 1 个 SDK 外，本 App 未集成其他第三方 SDK
+        </td>
+      </tr>
+    </table>
 
     <h2>三、我们如何使用信息</h2>
     <p>在需要处理数据的场景下，我们仅用于：</p>
